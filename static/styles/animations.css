@@ -1,0 +1,31 @@
+
+@keyframes intro-highlight {
+    from 
+    {
+        width: 0%;
+    }
+
+    to
+    {
+        width: calc(100% + 10px);
+    }
+}
+
+@keyframes smooth-appear {
+    from
+    {
+        opacity: 0;
+        transform: translateY(10vw);
+    }
+
+    50%
+    {
+        opacity: 0.3;
+    }
+
+    to 
+    {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

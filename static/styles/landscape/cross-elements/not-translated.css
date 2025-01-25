@@ -1,0 +1,16 @@
+@media only screen and (orientation: landscape) {
+    *.not-translated {
+        opacity: 0.4;
+        text-decoration: wavy underline;
+
+        transition: 0.2s opacity ease-out;
+    }
+
+    *.not-translated:hover {
+        opacity: 1;
+
+        transition: 0.2s opacity ease-out;
+    }
+}
+
+

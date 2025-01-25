@@ -1,0 +1,10 @@
+@media only screen and (orientation: portrait) {
+    .bordered {
+        border: 5px solid red;
+    }
+}
+
+
+
+
+

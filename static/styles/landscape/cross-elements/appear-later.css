@@ -1,0 +1,4 @@
+*.appear-later
+{
+    animation: 1s ease-out 0s smooth-appear;
+}

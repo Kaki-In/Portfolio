@@ -1,0 +1,38 @@
+@media only screen and (orientation: landscape) {
+    div.skills-section {
+        margin: 30px 0px;
+    }
+
+    div.skills-section div.skills-list {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    div.skills-section div.skill-thumbnail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 120px;
+        border-radius: 20px;
+        overflow: hidden;
+        background: red;
+        flex-shrink: 0;
+    }
+
+    div.skills-section div.skill-thumbnail img {
+        width: 100%;
+        height: auto;
+        background: black;
+        border-radius: 20px;
+        box-sizing: border-box;
+        padding: 10%;
+    }
+
+    div.skills-section div.skill-thumbnail:not(:first-child) {
+        margin-left: 20px;
+    }
+}
+
+
+

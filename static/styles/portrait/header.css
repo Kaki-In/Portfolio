@@ -1,0 +1,12 @@
+@media only screen and (orientation: portrait) {
+    header {
+        position: fixed;
+    
+        top: 10vw;
+        left: 10vw;
+        right: 10vw;
+    }
+}
+
+
+

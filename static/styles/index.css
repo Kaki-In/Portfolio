@@ -1,0 +1,19 @@
+@import url("landscape/index.css");
+@import url("portrait/index.css");
+@import url("fonts.css");
+@import url("animations.css");
+
+html {
+    background: black;
+    color: white;
+}
+
+body {
+    background: black;
+
+    z-index: -10;
+}
+
+* {
+    outline: none;
+}
