@@ -25,6 +25,10 @@ export class SkillExperienceThumbnail extends Component
                 date_text.innerHTML = date_from + " " + experience.date_from.toLocaleDateString(language) + " " + date_to + " " + experience.date_to.toLocaleDateString(language);
             }
         }, "experiences." + experience.name + ".title", "experiences." + experience.name + ".intro", "date.from", "date.to", "date.at", "date.to-today");
+
+        div.addEventListener("click", () => {
+            switch_history.pushState("experience", {experience:experience.name});
+        });
     }
 
     set isOdd(enabled)
