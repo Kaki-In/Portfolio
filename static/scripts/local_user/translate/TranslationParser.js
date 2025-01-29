@@ -20,13 +20,17 @@ export class TranslationParser
 
                 if (data_info === "emphase")
                 {
-                    cut_data[i] = `<span class='emphase'>${this.parse(data_arg)}</span>`;
+                    cut_data[i] = `<text class='emphase'>${this.parse(data_arg)}</text>`;
                 } else if (data_info === "highlight") {
-                    cut_data[i] = `<span class='highlighted'>${this.parse(data_arg)}</span>`;
+                    cut_data[i] = `<text class='highlighted'>${this.parse(data_arg)}</text>`;
                 } else if (data_info === "not translated") {
-                    cut_data[i] = `<span class='not-translated' title='this text could not be translated'>${this.parse(data_arg)}</span>`;
+                    cut_data[i] = `<text class='not-translated' title='this text could not be translated'>${this.parse(data_arg)}</text>`;
+                } else if (data_info === "superscript") {
+                    cut_data[i] = `<sup>${this.parse(data_arg)}</sup>`;
+                } else if (data_info === "subscript") {
+                    cut_data[i] = `<sub>${this.parse(data_arg)}</sub>`;
                 } else if (data_info === "hide") {
-                    cut_data[i] = `<span class='hidden'>${this.parse(data_arg)}</span>`;
+                    cut_data[i] = `<text class='hidden'>${this.parse(data_arg)}</text>`;
                 } else {
                     cut_data[i] = data_arg ;
                 }

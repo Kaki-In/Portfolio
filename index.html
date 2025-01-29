@@ -4,6 +4,31 @@
         <meta charset="utf-8"/>
         <link rel="icon" href="/static/images/icon64x64.png" type="image/x-icon"/>
         <link rel="stylesheet" href="/static/styles/index.css"/>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.31/esri/themes/dark/main.css">
+
+        <script src="https://js.arcgis.com/4.31/"></script>
+        <script>
+
+var ESRI = {loaded: false};
+
+require([
+    "esri/config",
+    "esri/WebMap",
+    "esri/views/MapView",
+    "esri/widgets/Legend"
+    ], (esriConfig, WebMap, MapView, Legend) => {
+        esriConfig.apiKey = "AAPTxy8BH1VEsoebNVZXo8HurGmzy8arl10M7vj9-ICDngycdr-cukGuBv63qLbf6eA7flytQhuKGma5yER2MdcZXTZQADtU_xtsqbWmO9NVo3UphNqQ9uMS2Sbj4Tmspza9h3ZYth2-eQfggV-taxM07xjMyi3aGJ8yYZbzDsFY14OBtJRqifR0NWhqpBaiajjcOiMWf1ZjL1THoaxBYh4tqXuV207KmkDjOPrx755J91o";
+
+        ESRI.config = esriConfig;
+        ESRI.WebMap = WebMap;
+        ESRI.MapView = MapView;
+        ESRI.Legend = Legend;
+
+        ESRI.loaded = true;
+});
+
+        </script>
+            
     </head>
     <body>
         <header class="bordered">
@@ -11,10 +36,11 @@
 
         <main>
         </main>
-        <script type="module" src="/static/scripts/index.js"></script>
-        <footer>
 
+        <footer>
         </footer>
+
+        <script type="module" src="/static/scripts/index.js"></script>
     </body>
 </html>
 

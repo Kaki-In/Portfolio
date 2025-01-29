@@ -1,0 +1,68 @@
+@media only screen and (orientation: landscape) {
+    div.esri-map-integration
+    {
+        position: relative;
+
+        width: 50%;
+        height: 50vh;
+        margin: auto;
+        border-radius: 20px;
+        border-width: 2px;
+
+        overflow: hidden;
+    }
+
+    div.esri-map-integration.full-screen
+    {
+        position: fixed;
+
+        width: 100vw;
+        height: 100vh;
+
+        border: none;
+        border-radius: 0px;
+
+        z-index: 10000;
+
+        top: 0px;
+        left: 0px;
+    }
+
+    div.esri-map-integration .esri-view-surface::after
+    {
+        display: none !important;
+    }
+
+    div.esri-map-integration button
+    {
+        display: inline-block;
+
+        padding: 5px;
+
+        background: #242424;
+        border: 1px solid black;
+        color: white;
+
+        width: 30px;
+        height: 30px;
+
+    }
+
+    div.esri-map-integration button:hover
+    {
+        background: #1E1E1E;
+    }
+
+    div.esri-map-integration button img
+    {
+        opacity: 0.7;
+    }
+
+    div.esri-map-integration button:hover img
+    {
+        opacity: 1;
+    }
+}
+
+
+

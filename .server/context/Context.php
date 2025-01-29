@@ -5,6 +5,8 @@ include "database/sqlDatabase.php";
 include "translations/Translations.php";
 include "translation-utility/Translator.php";
 include "skills/Skills.php";
+include "experiences/Experiences.php";
+include "projects/Projects.php";
 
 class Context
 {
@@ -12,6 +14,8 @@ class Context
     private TranslationsList $_translations;
     private Translator $_translator;
     private SkillsList $_skills;
+    private ExperiencesList $_experiences;
+    private ProjectsList $_projects;
 
     public function __construct()
     {
@@ -23,26 +27,39 @@ class Context
         $this->_translator = new Translator($this->_translations);
 
         $this->_skills = new SkillsList($this->_database->getTable('Skills'));
+        $this->_experiences = new ExperiencesList($this->_database->getTable('Experiences'));
+        $this->_projects = new ProjectsList($this->_database->getTable("Projects"));
+
     }
 
-    public function getDatabase()
+    public function getDatabase() : DatabaseConnection
     {
         return $this->_database;
     }
 
-    public function getTranslations()
+    public function getTranslations() : TranslationsList
     {
         return $this->_translations;
     }
 
-    public function getTranslator()
+    public function getTranslator() : Translator
     {
         return $this->_translator;
     }
 
-    public function getSkills()
+    public function getSkills() : SkillsList
     {
         return $this->_skills;
+    }
+
+    public function getExperiences() : ExperiencesList
+    {
+        return $this->_experiences;
+    }
+
+    public function getProjects() : ProjectsList
+    {
+        return $this->_projects;
     }
 
 }

@@ -3,8 +3,12 @@
 @import url("pages/index.css");
 
 @media only screen and (orientation: landscape) {
+    html {
+        overflow: hidden;
+    }
+
     body {
-        position: absolute;
+        position: fixed;
         display: flex;
         flex-direction: column;
 

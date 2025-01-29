@@ -1,9 +1,9 @@
-import { appendChild, Component } from "../../../components/Component.js";
+import { appendChild, Component } from "../../../../components/Component.js";
 import { SkillThumbnail } from "./SkillThumbnail.js";
 
 export class SkillsSection extends Component
 {
-    constructor(name, type, local_user, notifications)
+    constructor(name, type, local_user, notifications, switch_history)
     {
         let { div, title, content_div } = createSoftSkillsSection();
         super(div);
@@ -15,22 +15,22 @@ export class SkillsSection extends Component
             this._title.innerHTML = soft_skills;
         }, name);
 
-        this.prepare(type, local_user, notifications);
+        this.prepare(type, local_user, notifications, switch_history);
     }
 
-    async prepare(type, local_user, notifications)
+    async prepare(type, local_user, notifications, switch_history)
     {
         let skills = await local_user.world.skills.getSkillsOfType(type);
 
         for (let skill of skills)
         {
-            this.addSkillThumbnail(skill, local_user, notifications);
+            this.addSkillThumbnail(skill, local_user, notifications, switch_history);
         }
     }
 
-    addSkillThumbnail(skill, local_user, notifications)
+    addSkillThumbnail(skill, local_user, notifications, switch_history)
     {
-        appendChild(this._content, new SkillThumbnail(skill, local_user, notifications));
+        appendChild(this._content, new SkillThumbnail(skill, local_user, notifications, switch_history));
     }
 
 }

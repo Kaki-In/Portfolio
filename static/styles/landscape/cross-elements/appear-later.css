@@ -1,4 +1,11 @@
-*.appear-later
-{
-    animation: 1s ease-out 0s smooth-appear;
+@media only screen and (orientation: landscape) {
+    *.appear-later
+    {
+        animation: 1s ease-out 0s smooth-appear;
+    }
 }
+
+
+
+
+

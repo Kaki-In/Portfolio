@@ -2,6 +2,7 @@
     *.not-translated {
         opacity: 0.4;
         text-decoration: wavy underline;
+        cursor: help;
 
         transition: 0.2s opacity ease-out;
     }

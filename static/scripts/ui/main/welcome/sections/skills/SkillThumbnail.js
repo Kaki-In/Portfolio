@@ -1,12 +1,18 @@
-import { appendChild, Component } from "../../../components/Component.js";
-import { Image } from "../../../components/Image.js";
+import { appendChild, Component } from "../../../../components/Component.js";
+import { Image } from "../../../../components/Image.js";
 
 export class SkillThumbnail extends Component
 {
-    constructor(skill, local_user, notifications)
+    constructor(skill, local_user, notifications, switch_history)
     {
         let { div, image, title } = createSoftSkill();
         super(div);
+
+        div.addEventListener("click", () => {
+            switch_history.pushState("skill", {
+                skill: skill.name
+            });
+        })
 
         this._div = div;
         this._image = image;
