@@ -2,6 +2,8 @@ import { MainComponent } from "../components/Main.js";
 import { Adapter } from "../components/Adapter.js";
 import { WelcomePage } from "./welcome/WelcomePage.js";
 import { SkillPage } from "./skill/SkillPage.js";
+import { ExperiencePage } from "./experience/ExperiencePage.js";
+import { ProjectPage } from "./project/ProjectPage.js";
 
 export class MainUI extends MainComponent
 {
@@ -39,6 +41,14 @@ export class MainUI extends MainComponent
             case "skill":
                 displayed_component = new SkillPage(this._local_user, this._notifications, this._switch_history);
                 break
+            
+            case "experience":
+                displayed_component = new ExperiencePage(this._local_user, this._notifications, this._switch_history);
+                break;
+            
+            case "project":
+                displayed_component = new ProjectPage(this._local_user, this._notifications, this._switch_history);
+                break;
 
             default:
                 displayed_component = new WelcomePage(this._local_user, this._notifications, this._switch_history);

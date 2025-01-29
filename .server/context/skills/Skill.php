@@ -16,6 +16,11 @@ class Skill
         return $this->element->id;
     }
 
+    public function exists() : bool
+    {
+        return $this->element->exists();
+    }
+
     public function logo() : string
     {
         return $this->element->logo;

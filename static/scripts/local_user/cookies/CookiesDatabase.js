@@ -26,10 +26,8 @@ export class CookiesDatabase {
 		var time = dateExpiration.getTime();
 		var expireTime = time + 30 * 24 * 3600 * 1000;
 		dateExpiration.setTime(expireTime);
-		console.log(dateExpiration);
 
-		document.cookie = this._name + "=" + encodeURIComponent(JSON.stringify(value)) + "; expires=" + dateExpiration.toGMTString() + "; path=/; SameSite=None; Secure";
-		console.log(this._name + "=" + encodeURIComponent(JSON.stringify(value)) + "; expires=" + dateExpiration.toGMTString() + "; path=/; SameSite=None; Secure");
+		document.cookie = this._name + "=" + encodeURIComponent(JSON.stringify(value)) + "; expires=" + dateExpiration.toUTCString() + "; path=/; SameSite=None; Secure";
 		return true;
 	}
 

@@ -23,6 +23,7 @@ if (isset($ARGV['name']))
 
 } else {
     header($_SERVER['SERVER_PROTOCOL'].' 400 Bad Request', true, 400);
+    exit;
 };
 
 ?>

@@ -1,10 +1,18 @@
 import { Skill } from "./Skill.js";
+import { SkillDetails } from "./SkillDetails.js";
 
 export class SkillsList
 {
     constructor(api)
     {
         this._api = api;
+    }
+
+    async getSkillDetails(name)
+    {
+        let data = await this._api.sendAction("get-skill-details", { name });
+
+        return new SkillDetails(new Skill(name, data.type, data.logo), data['experiences-uses'], data['projects-uses']);
     }
 
     async getAllSkills()

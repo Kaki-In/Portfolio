@@ -1,7 +1,7 @@
 import { appendChild, Component } from "../../../../components/Component.js";
 import { Image } from "../../../../components/Image.js";
 
-export class ProjectThumbnail extends Component
+export class SkillProjectThumbnail extends Component
 {
     constructor(project, local_user, notifications, switch_history)
     {
@@ -25,10 +25,6 @@ export class ProjectThumbnail extends Component
                 date_text.innerHTML = date_from + " " + project.date_from.toLocaleDateString(language) + " " + date_to + " " + project.date_to.toLocaleDateString(language);
             }
         }, "project." + project.name + ".title", "project." + project.name + ".intro", "date.from", "date.to", "date.at", "date.to-today");
-
-        div.addEventListener("click", () => {
-            switch_history.pushState("project", {project: project.name});
-        });
     }
 
     get isOdd()

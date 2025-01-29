@@ -1,0 +1,29 @@
+@media only screen and (orientation: landscape) {
+    #skill div.skill-banner
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    #skill div.skill-banner img
+    {
+        height: 100px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    #skill .loading
+    {
+        position: relative;
+
+        height: 40px;
+
+        width: 100%;
+        margin: auto;
+    }
+    
+}
+
+
+

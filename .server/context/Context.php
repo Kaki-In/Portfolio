@@ -7,6 +7,7 @@ include "translation-utility/Translator.php";
 include "skills/Skills.php";
 include "experiences/Experiences.php";
 include "projects/Projects.php";
+include "go-through/SkillUses.php";
 
 class Context
 {
@@ -16,6 +17,7 @@ class Context
     private SkillsList $_skills;
     private ExperiencesList $_experiences;
     private ProjectsList $_projects;
+    private SkillUsesList $_skill_uses;
 
     public function __construct()
     {
@@ -29,6 +31,8 @@ class Context
         $this->_skills = new SkillsList($this->_database->getTable('Skills'));
         $this->_experiences = new ExperiencesList($this->_database->getTable('Experiences'));
         $this->_projects = new ProjectsList($this->_database->getTable("Projects"));
+
+        $this->_skill_uses = new SkillUsesList($this->_database->getTable("UsedSkills"), $this->_projects, $this->_experiences, $this->_skills);
 
     }
 
@@ -60,6 +64,11 @@ class Context
     public function getProjects() : ProjectsList
     {
         return $this->_projects;
+    }
+
+    public function getSkillUses() : SkillUsesList
+    {
+        return $this->_skill_uses;
     }
 
 }

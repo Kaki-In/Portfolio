@@ -1,0 +1,15 @@
+@media only screen and (orientation: landscape) {
+    #project .loading
+    {
+        position: relative;
+
+        height: 40px;
+
+        width: 100%;
+        margin: auto;
+    }
+    
+}
+
+
+

@@ -4,9 +4,9 @@ import { MainHeaderContent } from "./Content.js";
 
 export class HeaderUI extends HeaderComponent
 {
-    constructor(main_ui, notifications)
+    constructor(main_ui, notifications, switch_history)
     {
         super(new Adapter());
-        this.adapter.content = new MainHeaderContent(main_ui, notifications);
+        this.adapter.content = new MainHeaderContent(main_ui, notifications, switch_history);
     }
 }
