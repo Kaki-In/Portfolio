@@ -11,6 +11,7 @@
     }
 
     div.skills-section div.skill-thumbnail {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -39,9 +40,21 @@
         padding: 10%;
     }
 
-    div.skills-section div.skill-thumbnail h3 {
+    div.skills-section div.skill-thumbnail div.title-div {
         flex-grow: 1;
+        height: 100%;
+        margin: 0px;
+        padding: 20px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    div.skills-section div.skill-thumbnail div.title-div h3
+    {
         text-align: center;
+        padding: 0px;
+        margin: 0px;
     }
 
     div.skills-section div.skill-thumbnail:not(:first-child) {

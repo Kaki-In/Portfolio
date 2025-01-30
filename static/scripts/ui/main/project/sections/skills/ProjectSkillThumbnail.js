@@ -34,7 +34,10 @@ function createSoftSkill()
 
     let image = appendChild(div, new Image());
 
-    let title = div.appendChild(document.createElement('h3'))
+    let title_div = div.appendChild(document.createElement("div")); // needed because of the table-cell display that can't handle the relative distances
+    title_div.classList.add("title-div");
+
+    let title = title_div.appendChild(document.createElement('h3'));
 
     return {
         div,
