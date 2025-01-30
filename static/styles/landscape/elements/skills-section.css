@@ -15,7 +15,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 160px;
+        width: 120px;
         border-radius: 20px;
         overflow: hidden;
         background: red;
@@ -50,9 +50,10 @@
         justify-content: space-around;
     }
 
-    div.skills-section div.skill-thumbnail div.title-div h3
+    div.skills-section div.skill-thumbnail div.title-div p
     {
         text-align: center;
+        font-weight: bold;
         padding: 0px;
         margin: 0px;
     }

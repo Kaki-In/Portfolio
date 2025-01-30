@@ -1,5 +1,6 @@
 import { appendChild, Component, removeChild } from "../../../../components/Component.js";
 import { LoadingSVG } from "../../../../components/svgs/LoadingSvg.js";
+import { observeAppearition } from "../../../../utils/animate-observer.js";
 import { ExperienceThumbnail } from "./ExperienceThumbnail.js";
 
 export class ExperiencesSection extends Component
@@ -38,6 +39,8 @@ export class ExperiencesSection extends Component
         thumbnail.isOdd = odd;
 
         appendChild(this._experiences_div, thumbnail);
+
+        observeAppearition(thumbnail.element);
     }
 }
 
