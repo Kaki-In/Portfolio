@@ -7,7 +7,9 @@ export class CookiesDatabase {
 
 		if (this.data === undefined) {
             this.data = {};
-        }
+        } else {
+			this.data = this.data; // to ensure that cookies expiration is reloaded - else Secure is removed and expiration is set to one hour. 
+		}
 	}
 
 	get data () {

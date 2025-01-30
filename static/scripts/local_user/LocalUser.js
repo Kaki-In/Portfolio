@@ -1,6 +1,7 @@
 import { EventHandler } from "../events/EventHandler.js";
 import { DistantAPI } from "./api/DistantApi.js";
 import { CookiesDatabase } from "./cookies/CookiesDatabase.js";
+import { PagesRetriever } from "./pages/PagesRetriever.js";
 import { UserPreferences } from "./preferences/Preferences.js";
 import { TextTranslator } from "./translate/TranslateAPI.js";
 import { World } from "./world/World.js";
@@ -12,9 +13,11 @@ export class LocalUser
         this._database = new CookiesDatabase("em-portfolio");
         this._preferences = new UserPreferences(this._database);
 
-        this._api = new DistantAPI("https://eden-morey.flopcreation.fr/api");
+        this._api = new DistantAPI("https://" + location.host + "/api");
+        this._pages_retriever = new PagesRetriever("https://" + location.host + "/pages");
+
         this._translator = new TextTranslator(this._api, this._preferences);
-        this._world = new World(this._api);
+        this._world = new World(this._api, this._pages_retriever);
 
         this._events = {
             update: new EventHandler()

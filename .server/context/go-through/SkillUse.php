@@ -9,10 +9,17 @@ if (!isset($HEADER_SKILL_USE))
     class SkillUse
     {
         protected ElementConnection $element;
+        private SkillsList $skills;
 
-        public function __construct(ElementConnection $element)
+        public function __construct(ElementConnection $element, SkillsList $skills)
         {
             $this->element = $element;
+            $this->skills = $skills;
+        }
+
+        public function skill() : Skill
+        {
+            return $this->skills->getSkill($this->element->skill);
         }
 
         public function element() : string

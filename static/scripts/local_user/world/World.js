@@ -4,13 +4,11 @@ import { SkillsList } from "./skills/SkillsList.js";
 
 export class World
 {
-    constructor(api)
+    constructor(api, pages_retriever)
     {
-        this._api = api;
-
-        this._skills = new SkillsList(this._api);
-        this._experiences = new ExperiencesList(this._api);
-        this._projects = new ProjectsList(this._api);
+        this._skills = new SkillsList(api, pages_retriever);
+        this._experiences = new ExperiencesList(api, pages_retriever);
+        this._projects = new ProjectsList(api, pages_retriever);
     }
 
     get skills()

@@ -38,7 +38,7 @@ if (!isset($HEADER_SKILL_USES_LIST))
                 } else if ($element->type == 1) {
                     $l[] = new ProjectSkillUse($element, $this->projects, $this->skills);
                 } else {
-                    $l[] = new SkillUse($element);
+                    $l[] = new SkillUse($element, $this->skills);
                 }
             }
 

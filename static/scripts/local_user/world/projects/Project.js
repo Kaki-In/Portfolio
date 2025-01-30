@@ -4,8 +4,9 @@ export const PROJECT_TYPE_PROFESSIONNAL     = 2
 
 export class Project
 {
-    constructor(name, type, thumbnail, date_from, date_to, finished, location)
+    constructor(pages_retriever, name, type, thumbnail, date_from, date_to, finished, location)
     {
+        this._pages_retriever = pages_retriever;
         this._name = name;
         this._type = type;
         this._thumbnail = thumbnail;
@@ -13,6 +14,11 @@ export class Project
         this._date_to = date_to;
         this._finished = finished;
         this._location = location;
+    }
+
+    async getPage()
+    {
+        return await this._pages_retriever.getProjectsPage(this._name);
     }
 
     get name()

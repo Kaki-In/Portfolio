@@ -9,19 +9,12 @@ require "context/experiences/Experiences.php";
 class ExperienceSkillUse extends SkillUse
 {
     private ExperiencesList $experiences;
-    private SkillsList $skills;
 
     public function __construct(ElementConnection $element, ExperiencesList $experiences, SkillsList $skills)
     {
-        parent::__construct($element);
+        parent::__construct($element, $skills);
 
         $this->experiences = $experiences;
-        $this->skills = $skills;
-    }
-
-    public function skill() : Skill
-    {
-        return $this->skills->getSkill($this->element->skill);
     }
 
     public function experience() : Experience
