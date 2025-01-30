@@ -45,7 +45,7 @@ if (!isset($HEADER_SKILL_USES_LIST))
             return $l;
         }
 
-        public function getExperienceSkills(string $experience)
+        public function getExperienceSkills(string $experience) : array
         {
             $l = [];
 
@@ -57,11 +57,11 @@ if (!isset($HEADER_SKILL_USES_LIST))
             return $l;
         }
 
-        public function getProjectsSkills(string $experience)
+        public function getProjectSkills(string $project) : array
         {
             $l = [];
 
-            foreach ($this->table->getElements(["element" => [COMPARISON_EQUAL, $experience], "type" => [COMPARISON_EQUAL, 1]]) as $element)
+            foreach ($this->table->getElements(["element" => [COMPARISON_EQUAL, $project], "type" => [COMPARISON_EQUAL, 1]]) as $element)
             {
                 $l[] = new ProjectSkillUse($element, $this->projects, $this->skills);
             }

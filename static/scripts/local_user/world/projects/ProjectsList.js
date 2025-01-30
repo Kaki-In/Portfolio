@@ -1,4 +1,5 @@
 import { Project } from "./Project.js";
+import { ProjectDetails } from "./ProjectDetails.js";
 
 export class ProjectsList
 {
@@ -6,6 +7,13 @@ export class ProjectsList
     {
         this._api = api;
         this._pages_retriever = pages_retriever;
+    }
+
+    async getProjectDetails(name)
+    {
+        let data = await this._api.sendAction("get-project-details", { name });
+
+        return new ProjectDetails(new Project(this._pages_retriever, data.name, data.type, data.thumbnail, new Date(data['date-from']), data['date-to']?new Date(data['date-to']):null, data.finished, data.location), data['skills']);
     }
 
     async getAllProjects()

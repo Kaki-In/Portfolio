@@ -18,7 +18,7 @@ export class Project
 
     async getPage()
     {
-        return await this._pages_retriever.getProjectsPage(this._name);
+        return await this._pages_retriever.getProjectPage(this._name);
     }
 
     get name()

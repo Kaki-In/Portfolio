@@ -1,14 +1,4 @@
 @media only screen and (orientation: landscape) {
-    #experience .loading
-    {
-        position: relative;
-
-        height: 40px;
-
-        width: 100%;
-        margin: auto;
-    }
-
     #experience .experience-banner
     {
         display: flex;
@@ -64,6 +54,7 @@
         color: red;
         background: white;
         padding: 10px;
+        margin: auto;
         border-radius: 2px;
         width: fit-content;
     }

@@ -1,14 +1,16 @@
-import { appendChild, Component } from "../../../../components/Component.js";
+import { appendChild, Component, removeChild } from "../../../../components/Component.js";
+import { LoadingSVG } from "../../../../components/svgs/LoadingSvg.js";
 import { ProjectThumbnail } from "./ProjectThumbnail.js";
 
 export class ProjectsSection extends Component
 {
     constructor(title, type, local_user, notifications, switch_history)
     {
-        let { div, title: title_element, projects_div } = createProjectSection();
+        let { div, title: title_element, projects_div, loading_svg } = createProjectSection();
         super(div);
 
         this._projects_div = projects_div;
+        this._loading_svg = loading_svg;
 
         local_user.translator.multiTranslate((title) => {
             title_element.innerHTML = title;
@@ -26,6 +28,8 @@ export class ProjectsSection extends Component
             this.addProject(project, local_user, notifications, switch_history, i%2);
             ++i;
         }
+
+        removeChild(this.element, this._loading_svg);
     }
 
     addProject(project, local_user, notifications, switch_history, odd)
@@ -47,10 +51,14 @@ function createProjectSection()
     let projects_div = div.appendChild(document.createElement("div"));
     projects_div.classList.add("projects-list");
 
+    let loading_svg = appendChild(div, new LoadingSVG());
+    loading_svg.start();
+
     return {
         div,
         title,
-        projects_div
+        projects_div,
+        loading_svg
     }
 }
 

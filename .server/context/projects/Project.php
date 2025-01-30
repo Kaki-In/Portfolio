@@ -11,6 +11,11 @@ class Project
         $this->element = $element;
     }
 
+    public function exists() : bool
+    {
+        return $this->element->exists();
+    }
+
     public function name() : string
     {
         return $this->element->id;
