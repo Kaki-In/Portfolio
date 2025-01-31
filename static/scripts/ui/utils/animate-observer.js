@@ -3,12 +3,14 @@ export const APPEAR_OBSERVER = new IntersectionObserver(entries => {
         if (entry.isIntersecting) {
             if (entry.target.appear_observer_was_not_intersecting)
             {
+                entry.target.classList.remove("will-appear");
                 entry.target.classList.add('appear-later');
             }
             
             entry.target.appear_observer_was_not_intersecting = false;
         } else if (entry.target.appear_observer_was_not_intersecting === undefined) {
             entry.target.appear_observer_was_not_intersecting = true;
+            entry.target.classList.add("will-appear");
         }
     });
 });

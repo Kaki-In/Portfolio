@@ -1,0 +1,10 @@
+@media only screen and (orientation: portrait) {
+    * {
+        scrollbar-color: red black;
+        scrollbar-arrow-color: white;
+
+        transition: 0.2s opacity ease-out;
+    }
+}
+
+

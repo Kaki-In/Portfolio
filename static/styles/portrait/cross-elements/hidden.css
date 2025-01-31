@@ -1,0 +1,16 @@
+@media only screen and (orientation: portrait) {
+    *.hidden {
+        display: none;
+    }
+    
+    *:has( > .hidden)
+    {
+        text-wrap: nowrap;
+    }
+}
+
+
+
+
+
+

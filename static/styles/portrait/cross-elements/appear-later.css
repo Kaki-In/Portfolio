@@ -1,4 +1,4 @@
-@media only screen and (orientation: landscape) {
+@media only screen and (orientation: portrait) {
     *.appear-later
     {
         animation: 1s ease-out 0s smooth-appear;

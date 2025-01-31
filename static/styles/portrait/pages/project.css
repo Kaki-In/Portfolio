@@ -1,0 +1,65 @@
+@media only screen and (orientation: portrait) {
+    #project .project-banner
+    {
+        display: flex;
+
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #project .project-banner img
+    {
+        width: 100px;
+        height: auto;
+        margin: 20px;
+    }
+    
+    #project .project-page
+    {
+        position: relative;
+        padding: 20px;
+    }
+
+    #project .project-page::before
+    {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: 10%;
+        right: 10%;
+
+        width: 80%;
+        height: 1px;
+
+        background: red;
+    }
+
+    #project .project-page::after
+    {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 10%;
+        right: 10%;
+
+        width: 80%;
+        height: 1px;
+
+        background: red;
+    }
+
+    #project p#not-finished-text
+    {
+        display: block;
+        color: red;
+        background: white;
+        padding: 10px;
+        margin: auto;
+        border-radius: 2px;
+        width: fit-content;
+    }
+
+}
+
+
+

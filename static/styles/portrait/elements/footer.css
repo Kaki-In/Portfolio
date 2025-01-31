@@ -1,0 +1,97 @@
+@media only screen and (orientation: portrait) {
+    footer 
+    {
+        position: relative;
+
+        background: red;
+        box-sizing: border-box;
+        padding: 0px;
+        margin: 0px;
+    
+        height: 200px;
+    }
+    
+    footer div.footer-content
+    {
+        position: relative;
+
+        box-sizing: border-box;
+    
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        top: 0px;
+        left: 0px;
+
+        padding: 20px;
+        margin: 0px;
+    }
+    
+    footer div.footer-content p#copyright
+    {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+    
+        display: inline-block;
+        margin: 0px;
+    
+        color: #880000;
+
+        font-size: 10px;
+    }
+    
+    footer div.footer-sections
+    {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: left;
+        align-content: space-evenly;
+    }
+    
+    footer div.footer-sections ul.footer-list
+    {
+        position: relative;
+        display: inline-block;
+        list-style-type: none;
+        width: auto;
+    }
+    
+    footer div.footer-sections ul.footer-list h1
+    {
+        margin: 0px;
+        padding: 0px;
+        color: black;
+
+        font-size: medium;
+    }
+    
+    footer div.footer-sections ul.footer-list a, footer div.footer-sections ul.footer-list button
+    {
+        text-decoration: none;
+        background : none;
+        border: none;
+        padding: 0px;
+        margin: 0px;
+        font-size: small;
+        color: black;
+        transition: 100ms all ease-out;
+    }
+    
+    footer div.footer-sections ul.footer-list a:hover, footer div.footer-sections ul.footer-list button:hover
+    {
+        color: white;
+        cursor: pointer;
+        transition: 100ms all ease-out;
+    }
+    
+}
+
+
+
