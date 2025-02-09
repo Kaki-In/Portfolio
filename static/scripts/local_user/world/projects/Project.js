@@ -4,7 +4,7 @@ export const PROJECT_TYPE_PROFESSIONNAL     = 2
 
 export class Project
 {
-    constructor(pages_retriever, name, type, thumbnail, date_from, date_to, finished, location)
+    constructor(pages_retriever, name, type, thumbnail, date_from, date_to, finished, link, location)
     {
         this._pages_retriever = pages_retriever;
         this._name = name;
@@ -13,6 +13,7 @@ export class Project
         this._date_from = date_from;
         this._date_to = date_to;
         this._finished = finished;
+        this._link = link;
         this._location = location;
     }
 
@@ -49,6 +50,11 @@ export class Project
     get finished()
     {
         return this._finished;
+    }
+
+    get link()
+    {
+        return this._link;
     }
 
     get location()

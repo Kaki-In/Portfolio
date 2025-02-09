@@ -13,7 +13,7 @@ export class ProjectsList
     {
         let data = await this._api.sendAction("get-project-details", { name });
 
-        return new ProjectDetails(new Project(this._pages_retriever, data.name, data.type, data.thumbnail, new Date(data['date-from']), data['date-to']?new Date(data['date-to']):null, data.finished, data.location), data['skills']);
+        return new ProjectDetails(new Project(this._pages_retriever, data.name, data.type, data.thumbnail, new Date(data['date-from']), data['date-to']?new Date(data['date-to']):null, data.finished, data.link, data.location), data['skills']);
     }
 
     async getAllProjects()
@@ -24,7 +24,7 @@ export class ProjectsList
 
         for (let project_data of data)
         {
-            result.push(new Project(this._pages_retriever, project_data.name, project_data.type, project_data.thumbnail, new Date(project_data['date-from']), project_data['date-to']?new Date(project_data['date-to']):null, project_data.finished, project_data.location));
+            result.push(new Project(this._pages_retriever, project_data.name, project_data.type, project_data.thumbnail, new Date(project_data['date-from']), project_data['date-to']?new Date(project_data['date-to']):null, project_data.finished, project_data.link, project_data.location));
         }
 
         return result;
@@ -38,7 +38,7 @@ export class ProjectsList
 
         for (let project_data of data)
         {
-            result.push(new Project(this._pages_retriever, project_data.name, project_data.type, project_data.thumbnail, new Date(project_data['date-from']), project_data['date-to']?new Date(project_data['date-to']):null, project_data.finished, project_data.location));
+            result.push(new Project(this._pages_retriever, project_data.name, project_data.type, project_data.thumbnail, new Date(project_data['date-from']), project_data['date-to']?new Date(project_data['date-to']):null, project_data.finished, project_data.link, project_data.location));
         }
 
         return result;

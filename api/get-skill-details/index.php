@@ -48,7 +48,8 @@ if (isset($ARGV['name']))
                 'thumbnail' => base64_encode($project->thumbnail()),
                 'date-from' => intval(1000 * $project->dateFrom()),
                 'date-to' => intval(1000 * $project->dateTo()),
-                'finished' => $project->finished()
+                'finished' => $project->finished(),
+                'link' => $project->link()
             ];
         }
     }

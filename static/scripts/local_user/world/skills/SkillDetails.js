@@ -16,7 +16,7 @@ export class SkillDetails
         this._used_projects = [];
         for (let project_data of used_projects)
         {
-            this._used_projects.push(new Project(pages_retriever, project_data.name, project_data.type, project_data.thumbnail, new Date(project_data['date-from']), project_data['date-to']?new Date(project_data['date-to']):null, project_data.finished, project_data.location));
+            this._used_projects.push(new Project(pages_retriever, project_data.name, project_data.type, project_data.thumbnail, new Date(project_data['date-from']), project_data['date-to']?new Date(project_data['date-to']):null, project_data.finished, project_data.link, project_data.location));
         }
     }
 

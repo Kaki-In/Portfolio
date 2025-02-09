@@ -49,9 +49,14 @@ class Project
         else return strtotime($date);
     }
 
-    public function location() : string
+    public function link() : string | null
     {
-        return $this->element->get("location");
+        return $this->element->link;
+    }
+
+    public function location() : string | null
+    {
+        return $this->element->location;
     }
 }
 

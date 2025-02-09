@@ -28,6 +28,7 @@ if (isset($ARGV['name']))
         'date-from' => intval(1000 * $project->dateFrom()),
         'date-to' => intval(1000 * $project->dateTo()),
         'finished' => $project->finished(),
+        'link' => $project->link(),
         'skills' => []
     ];
 

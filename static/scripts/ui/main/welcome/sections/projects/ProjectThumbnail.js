@@ -5,7 +5,7 @@ export class ProjectThumbnail extends Component
 {
     constructor(project, local_user, notifications, switch_history)
     {
-        let { div, title: title_element, text, date_text, image } = createProjectThumbnail();
+        let { div, title: title_element, text, date_text, image, link_text } = createProjectThumbnail();
         super(div);
 
         image.base64 = project.thumbnail;
@@ -18,17 +18,25 @@ export class ProjectThumbnail extends Component
 
             if (project.date_to === null)
             {
-                date_text.innerHTML = date_from + " " + project.date_from.toLocaleDateString(language) + " " + date_to_today;
+                date_text.innerHTML = date_from + " " + project.date_from.toLocaleDateString(language) + " " + date_to_today ;
             } else if (project.date_from.toDateString() == project.date_to.toDateString()) {
                 date_text.innerHTML = date_at + " " + project.date_from.toLocaleDateString(language);
             } else {
                 date_text.innerHTML = date_from + " " + project.date_from.toLocaleDateString(language) + " " + date_to + " " + project.date_to.toLocaleDateString(language);
             }
+
         }, "project." + project.name + ".title", "project." + project.name + ".intro", "date.from", "date.to", "date.at", "date.to-today");
 
         div.addEventListener("click", () => {
             switch_history.pushState("project", {project: project.name});
         });
+
+        if (project.link)
+        {
+            link_text.href = project.link;
+            link_text.textContent = project.link;
+        }
+
     }
 
     get isOdd()
@@ -61,8 +69,14 @@ function createProjectThumbnail()
     let text = description_div.appendChild(document.createElement("p"));
     text.classList.add("project-intro");
 
-    let date_text = description_div.appendChild(document.createElement("p"));
+    let description_p = description_div.appendChild(document.createElement("p"));
+    description_p.innerHTML = "<text id='date'></text> - <a id='link' target='_blank'></a>";
+
+    let date_text = description_p.querySelector('#date');
     date_text.classList.add("project-dates");
+    
+    let link_text = description_p.querySelector('#link');
+    link_text.classList.add("project-links");
     
     return {
         div,
@@ -70,6 +84,7 @@ function createProjectThumbnail()
         title,
         text,
         date_text,
+        link_text
     };
 }
 
