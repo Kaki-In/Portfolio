@@ -8,6 +8,8 @@ include "skills/Skills.php";
 include "experiences/Experiences.php";
 include "projects/Projects.php";
 include "go-through/SkillUses.php";
+include "countries/Countries.php";
+include "locations/Locations.php";
 
 class Context
 {
@@ -17,6 +19,8 @@ class Context
     private SkillsList $_skills;
     private ExperiencesList $_experiences;
     private ProjectsList $_projects;
+    private CountriesList $_countries;
+    private LocationsList $_locations;
     private SkillUsesList $_skill_uses;
 
     public function __construct()
@@ -31,6 +35,8 @@ class Context
         $this->_skills = new SkillsList($this->_database->getTable('Skills'));
         $this->_experiences = new ExperiencesList($this->_database->getTable('Experiences'));
         $this->_projects = new ProjectsList($this->_database->getTable("Projects"));
+        $this->_countries = new CountriesList($this->_database->getTable("Countries"));
+        $this->_locations = new LocationsList($this->_database->getTable("Locations"));
 
         $this->_skill_uses = new SkillUsesList($this->_database->getTable("UsedSkills"), $this->_projects, $this->_experiences, $this->_skills);
 
@@ -64,6 +70,16 @@ class Context
     public function getProjects() : ProjectsList
     {
         return $this->_projects;
+    }
+
+    public function getCountries() : CountriesList
+    {
+        return $this->_countries;
+    }
+
+    public function getLocations() : LocationsList
+    {
+        return $this->_locations;
     }
 
     public function getSkillUses() : SkillUsesList

@@ -11,7 +11,7 @@ export class DivTranslator
 
         if (element.getAttribute("translated") !== null)
         {
-            let translation = element.textContent;
+            let translation = element.innerText;
 
             if (!Object.keys(translated_elements).includes(translation))
             {

@@ -1,11 +1,11 @@
 import { appendChild, Component } from "../../../../components/Component.js";
-import { Image } from "../../../../components/Image.js";
+import { ImageComponent } from "../../../../components/Image.js";
 
 export class SkillExperienceThumbnail extends Component
 {
     constructor(experience, local_user, notifications, switch_history)
     {
-        let { div, title: title_element, intro_text, image, date_text } = createExperienceThumbnail();
+        let { div, title: title_element, intro_text, image, date_text } = createSkillExperienceThumbnail();
         super(div);
 
         image.base64 = experience.thumbnail;
@@ -47,7 +47,7 @@ export class SkillExperienceThumbnail extends Component
     }
 }
 
-function createExperienceThumbnail()
+function createSkillExperienceThumbnail()
 {
     let div = document.createElement('div');
     div.classList.add("experience-thumbnail");
@@ -58,7 +58,7 @@ function createExperienceThumbnail()
     content_div.classList.add("experience-description");
 
     let intro_text = content_div.appendChild(document.createElement("p"));
-    let image = appendChild(content_div, new Image());
+    let image = appendChild(content_div, new ImageComponent());
 
     let date_text = div.appendChild(document.createElement('span'));
     date_text.classList.add("date");

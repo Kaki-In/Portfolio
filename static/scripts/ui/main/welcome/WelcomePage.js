@@ -1,5 +1,5 @@
 import { appendChild, Component } from "../../components/Component.js";
-import { Image } from "../../components/Image.js";
+import { ImageComponent } from "../../components/Image.js";
 import { APPEAR_OBSERVER, observeAppearition, resetAppearition } from "../../utils/animate-observer.js";
 import { ComputerLanguagesSection } from "./sections/skills/ComputerLanguagesSection.js";
 import { HardSkillsSection } from "./sections/skills/HardSkillsSection.js";
@@ -13,6 +13,7 @@ import { SchoolBackgroundSection } from "./sections/experiences/SchoolBackground
 import { PersonnalProjectsSection } from "./sections/projects/PersonnalProjectsSection.js";
 import { ProfessionnalProjectsSection } from "./sections/projects/ProfessionalProjectSection.js";
 import { ScolarProjectsSection } from "./sections/projects/ScolarProjectsSection.js";
+import { HobbiesSection } from "./sections/skills/HobbiesSection.js";
 
 export class WelcomePage extends Component
 {
@@ -45,13 +46,14 @@ function createWelcomePage(local_user, notifications, switch_history)
     let intro_text = intro_text_div.appendChild(document.createElement("p"));
     intro_text.classList.add("intro");
 
-    let intro_image = appendChild(intro_div, new Image("/static/images/my-face.png"));
+    let intro_image = appendChild(intro_div, new ImageComponent("/static/images/my-face.png"));
     intro_image.element.classList.add("bordered");
 
     let hard_skills_section = appendChild(div, new HardSkillsSection(local_user, notifications, switch_history));
     let soft_skills_section = appendChild(div, new SoftSkillsSection(local_user, notifications, switch_history));
     let tongue_language_section = appendChild(div, new TongueLanguagesSection(local_user, notifications, switch_history));
     let computer_language_section = appendChild(div, new ComputerLanguagesSection(local_user, notifications, switch_history));
+    let hobbies_section = appendChild(div, new HobbiesSection(local_user, notifications, switch_history));
 
     let prof_background = appendChild(div, new ProfessionnalBackgroundSection(local_user, notifications, switch_history));
     let pers_background = appendChild(div, new PersonnalBackgroundSection(local_user, notifications, switch_history));
@@ -69,6 +71,7 @@ function createWelcomePage(local_user, notifications, switch_history)
     observeAppearition(soft_skills_section.element);
     observeAppearition(tongue_language_section.element);
     observeAppearition(computer_language_section.element);
+    observeAppearition(hobbies_section.element);
     observeAppearition(prof_background.element);
     observeAppearition(pers_background.element);
     observeAppearition(prof_projects.element);

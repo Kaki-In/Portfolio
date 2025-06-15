@@ -13,6 +13,8 @@ export class TextTranslator
 
     translate(name)
     {
+        name = name.replaceAll(" ", "").replaceAll("\n", "")
+        
         if (Object.keys(this._translations).includes(name))
         {
             return this._translations[name];

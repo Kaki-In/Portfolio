@@ -1,6 +1,6 @@
 import { Component, appendChild } from "./Component.js";
 import { Loader } from "./Loader.js";
-import { Image } from "./Image.js";
+import { ImageComponent } from "./Image.js";
 
 export class Button extends Component {
 
@@ -75,7 +75,7 @@ function createButton(text, listener) {
     let button = document.createElement('button');
     button.addEventListener("click", listener);
     appendChild(button, new Loader()).element.classList.add("hidden");
-    let image = appendChild(button, new Image());
+    let image = appendChild(button, new ImageComponent());
     button.appendChild(document.createElement("text")).textContent = text;
     return {button, image};
 }

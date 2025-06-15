@@ -2,6 +2,7 @@ export const SKILL_TYPE_HARD_SKILL          = 0
 export const SKILL_TYPE_SOFT_SKILL          = 1
 export const SKILL_TYPE_TONGUE_LANGAGE      = 2
 export const SKILL_TYPE_COMPUTER_LANGAGE    = 3
+export const SKILL_TYPE_HOBBIE              = 4
 
 export class Skill
 {

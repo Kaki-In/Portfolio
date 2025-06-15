@@ -46,7 +46,29 @@ export class SwitchHistory
 
         return result_pathname;
     }
-    
+
+
+    /*
+    propertpath(pathname)
+    {
+        let path=pathname.split('/');
+        let index;
+        while(index=path.indexOf('')!=- 1){
+            path.splice(index,1);
+        };
+
+        let result_pathname='';
+
+        for(let sub_path of path){
+
+            if(result_pathname)result_pathname+="/";
+            result_pathname+=sub_path;
+
+        };
+
+        return result_pathname;
+    }
+    */
     get state()
     {
         let state = {};

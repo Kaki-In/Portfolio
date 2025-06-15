@@ -11,7 +11,7 @@ if (isset($ARGV['type']))
 {
     $type = $ARGV['type'];
 
-    if (!($type == 0 || $type == 1 || $type == 2 || $type == 3 ))
+    if (!($type == 0 || $type == 1 || $type == 2 || $type == 3 || $type == 4))
     {
         header($_SERVER['SERVER_PROTOCOL'].' 400 Bad Request', true, 400);
         exit;

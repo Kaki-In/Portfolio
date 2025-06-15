@@ -1,5 +1,5 @@
 import { appendChild, Component } from "../../../../components/Component.js";
-import { Image } from "../../../../components/Image.js";
+import { ImageComponent } from "../../../../components/Image.js";
 
 export class ExperienceThumbnail extends Component
 {
@@ -58,7 +58,7 @@ function createExperienceThumbnail()
     content_div.classList.add("experience-description");
 
     let intro_text = content_div.appendChild(document.createElement("p"));
-    let image = appendChild(content_div, new Image());
+    let image = appendChild(content_div, new ImageComponent());
 
     let date_text = div.appendChild(document.createElement('span'));
     date_text.classList.add("date");

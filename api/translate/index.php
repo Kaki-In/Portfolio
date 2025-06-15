@@ -9,7 +9,7 @@ $_PLATFORM = new Platform();
 
 if (isset($ARGV['name']))
 {
-    $name = $ARGV['name'];
+    $name = str_replace("\n", "", str_replace(" ", "", $ARGV['name']));
 
     $data = $_PLATFORM->getContext()->getTranslator()->resolveTranslations($name);
 

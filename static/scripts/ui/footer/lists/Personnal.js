@@ -1,6 +1,6 @@
 import { FooterList } from "../../components/FooterList.js";
 
-export class PersonnalExperienceList extends FooterList
+export class PersonnalExperienceFooterList extends FooterList
 {
     constructor(local_user) 
     {

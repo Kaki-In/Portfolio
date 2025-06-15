@@ -1,6 +1,6 @@
 import { Button } from "./Button.js";
 import { Component } from "./Component.js";
-
+import { EventHandler } from "../../events/EventHandler.js";
 export class EsriMap extends Component
 {
     constructor(map_id)
@@ -8,7 +8,16 @@ export class EsriMap extends Component
         let map = createMap();
         super(map);
 
+        this._events = {
+            displayed: new EventHandler()
+        }
+
         this.prepare(map_id);
+    }
+
+    addEventListener(name, func)
+    {
+        this._events[name].connect(func);
     }
 
     async prepare(map_id) {
@@ -16,11 +25,11 @@ export class EsriMap extends Component
 
         this._map = new ESRI.WebMap({
           portalItem: {
-                  id: "810d2ec0386d4e30b3144cfd22e6781c"
+                  id: "4f2e99ba65e34bb8af49733d9778fb8e"
               }
         });
 
-        this._view = new ESRI.MapView({
+        this._view = new ESRI.SceneView({
           map: this._map,
           center: [2.618787, 47.824905],
           zoom: 3, // scale: 72223.819286
@@ -42,6 +51,19 @@ export class EsriMap extends Component
 
         this._view.ui.add(button.element, "top-left");
 
+        this._view.when(() => {
+            this._events.displayed.emit();
+        });
+    }
+
+    get map()
+    {
+        return this._map;
+    }
+
+    get view()
+    {
+        return this._view;
     }
 }
 

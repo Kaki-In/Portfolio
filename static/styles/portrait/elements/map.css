@@ -3,8 +3,8 @@
     {
         position: relative;
 
-        width: 50%;
-        height: 50vh;
+        width: 33vh;
+        height: 44vh;
         margin: auto;
         border-radius: 7px;
         border-width: 2px;
@@ -61,6 +61,19 @@
     div.esri-map-integration button:hover img
     {
         opacity: 1;
+    }
+
+    div.esri-map-integration div.location-thumbnail
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    div.esri-map-integration div.location-thumbnail img
+    {
+        height: 120px;
+        width: 120px;
     }
 }
 

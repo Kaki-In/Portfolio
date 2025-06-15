@@ -1,6 +1,7 @@
 @media only screen and (orientation: landscape) {
     * {
-        scrollbar-color: red black;
+        scrollbar-color: #CC0000 black;
+        scrollbar-color-hover: red black;
         scrollbar-arrow-color: white;
 
         transition: 0.2s opacity ease-out;

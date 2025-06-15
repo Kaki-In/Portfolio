@@ -5,7 +5,7 @@ export class SkillProjectsSection extends Component
 {
     constructor(title, projects, local_user, notifications, switch_history)
     {
-        let { div, title: title_element, projects_div } = createProjectSection();
+        let { div, title: title_element, projects_div } = createSkillProjectSection();
         super(div);
 
         this._projects_div = projects_div;
@@ -37,7 +37,7 @@ export class SkillProjectsSection extends Component
     }
 }
 
-function createProjectSection()
+function createSkillProjectSection()
 {
     let div = document.createElement("div");
     div.classList.add("projects-section");

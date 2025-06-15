@@ -14,15 +14,17 @@ var ESRI = {loaded: false};
 require([
     "esri/config",
     "esri/WebMap",
-    "esri/views/MapView",
-    "esri/widgets/Legend"
-    ], (esriConfig, WebMap, MapView, Legend) => {
-        esriConfig.apiKey = "AAPTxy8BH1VEsoebNVZXo8HurGmzy8arl10M7vj9-ICDngycdr-cukGuBv63qLbf6eA7flytQhuKGma5yER2MdcZXTZQADtU_xtsqbWmO9NVo3UphNqQ9uMS2Sbj4Tmspza9h3ZYth2-eQfggV-taxM07xjMyi3aGJ8yYZbzDsFY14OBtJRqifR0NWhqpBaiajjcOiMWf1ZjL1THoaxBYh4tqXuV207KmkDjOPrx755J91o";
-
+    "esri/views/SceneView",
+    "esri/widgets/Legend",
+    "esri/Graphic",
+    "esri/layers/GraphicsLayer"
+    ], (esriConfig, WebMap, SceneView, Legend, Graphic, GraphicsLayer) => {
         ESRI.config = esriConfig;
         ESRI.WebMap = WebMap;
-        ESRI.MapView = MapView;
+        ESRI.SceneView = SceneView;
         ESRI.Legend = Legend;
+        ESRI.Graphic = Graphic;
+        ESRI.GraphicsLayer = GraphicsLayer;
 
         ESRI.loaded = true;
 });

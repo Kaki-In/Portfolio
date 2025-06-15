@@ -1,5 +1,5 @@
 import { appendChild, Component, removeChild } from "../../components/Component.js";
-import { Image } from "../../components/Image.js";
+import { ImageComponent } from "../../components/Image.js";
 import { SVGAnimation } from "../../components/SVGAnimation.js";
 import { LoadingSVG } from "../../components/svgs/LoadingSvg.js";
 import { SkillExperiencesSection } from "./sections/experiences/SkillExperiencesSection.js";
@@ -57,7 +57,7 @@ function createSkillPage(local_user, notifications, switch_history)
     let banner = div.appendChild(document.createElement("div"));
     banner.classList.add("skill-banner");
 
-    let image = appendChild(banner, new Image());
+    let image = appendChild(banner, new ImageComponent());
 
     let title = banner.appendChild(document.createElement("h1"));
 

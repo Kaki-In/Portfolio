@@ -41,6 +41,16 @@ export class PagesRetriever
     {
         return await this.getPageData("projects", name);
     }
+
+    async getCoutryPage(name)
+    {
+        return await this.getPageData("countries", name);
+    }
+
+    async getLocationPage(name)
+    {
+        return await this.getPageData("locations", name);
+    }
 }
 
 

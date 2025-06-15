@@ -21,7 +21,7 @@ export class UserPreferences
     get language()
     {
         let lang = this._object.get("lang");
-        if (!lang) lang = "en";
+        if (!lang) lang = "fr";
         return lang;
     }
 

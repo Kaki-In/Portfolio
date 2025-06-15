@@ -10,7 +10,7 @@ export class TranslatedText extends Translation
         this._data = data;
         this._preferences = preferences;
        
-        this._events.change = new EventHandler();
+        this._events['change'] = new EventHandler();
 
         this.addEventListener("update", () => {
             this._events.change.emit(this.actual_translation);

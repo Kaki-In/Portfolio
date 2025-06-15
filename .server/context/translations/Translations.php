@@ -17,6 +17,7 @@ if (!isset($HEADER_TRANSLATIONS_LIST))
 
         public function getTranslation(string $id) : Translation
         {
+            $id = str_replace("\n", "", str_replace(" ", "", $id));
             $element = $this->_table->getElement($id);
 
             if (!$element->exists())
@@ -29,6 +30,7 @@ if (!isset($HEADER_TRANSLATIONS_LIST))
 
         public function createNewTranslation(string $name, string $default_translation) : Translation
         {
+            $name = str_replace("\n", "", str_replace(" ", "", $name));
             $this->_table->createElement(['id' => $name, "en_translation" => $default_translation]);
             return $this->getTranslation($name);
         }

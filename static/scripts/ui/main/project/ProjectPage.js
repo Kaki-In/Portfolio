@@ -1,7 +1,7 @@
 import { CssParser } from "../../../local_user/pages/CssParser.js";
 import { DivTranslator } from "../../../local_user/pages/DivTranslator.js";
 import { appendChild, Component, removeChild } from "../../components/Component.js";
-import { Image } from "../../components/Image.js";
+import { ImageComponent } from "../../components/Image.js";
 import { LoadingSVG } from "../../components/svgs/LoadingSvg.js";
 import { ProjectSkillsSection } from "./sections/skills/ProjectSkillsSection.js";
 
@@ -70,7 +70,7 @@ function createProjectPage()
     let banner = div.appendChild(document.createElement("div"));
     banner.classList.add("project-banner");
 
-    let image = appendChild(banner, new Image());
+    let image = appendChild(banner, new ImageComponent());
     let title = banner.appendChild(document.createElement("h1"));
 
     let loading_svg = appendChild(div, new LoadingSVG());

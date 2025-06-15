@@ -1,5 +1,5 @@
 import { appendChild, Component } from "../../../../components/Component.js";
-import { Image } from "../../../../components/Image.js";
+import { ImageComponent } from "../../../../components/Image.js";
 
 export class SkillThumbnail extends Component
 {
@@ -32,7 +32,7 @@ function createSoftSkill()
     div.classList.add('skill-thumbnail');
     div.classList.add('bordered');
 
-    let image = appendChild(div, new Image());
+    let image = appendChild(div, new ImageComponent());
 
     let title_div = div.appendChild(document.createElement("div")); // needed because of the table-cell display that can't handle the relative distances
     title_div.classList.add("title-div");

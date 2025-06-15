@@ -1,10 +1,10 @@
 import { appendChild } from "./Component.js";
 import { Component } from "./Component.js";
 
-export class Image extends Component {
+const IMAGE_DISPLAY_SRC = 0;
+const IMAGE_DISPLAY_BASE64 = 1;
 
-    DISPLAY_SRC;
-    DISPLAY_BASE64;
+export class ImageComponent extends Component {
 
     constructor(sourcePath) {
         let image = createImage(sourcePath);
@@ -13,13 +13,13 @@ export class Image extends Component {
 
         this._base64 = null;
 
-        this._displayMethod = this.DISPLAY_SRC;
+        this._displayMethod = IMAGE_DISPLAY_SRC;
     }
 
     set sourcePath(src) {
         this._sourcePath = src;
         this._base64 = null;
-        this._displayMethod = this.DISPLAY_SRC;
+        this._displayMethod = IMAGE_DISPLAY_SRC;
         this.element.src = src;
     }
 
@@ -30,7 +30,7 @@ export class Image extends Component {
     set base64(base64) {
         this._sourcePath = null;
         this._base64 = base64;
-        this._displayMethod = this.DISPLAY_BASE64;
+        this._displayMethod = IMAGE_DISPLAY_BASE64;
         this.element.src = "data:image/png;base64," + base64;
     }
 

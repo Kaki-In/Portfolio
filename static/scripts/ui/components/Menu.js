@@ -1,6 +1,6 @@
 import { Component, appendChild, removeChild } from "./Component.js";
 import { Button } from "./Button.js";
-import { Image } from "./Image.js";
+import { ImageComponent } from "./Image.js";
 
 export class Menu extends Component {
 
@@ -27,7 +27,7 @@ export class Menu extends Component {
     addIconText(text) {
         let div = document.createElement("div");
         div.classList.add("iconText");
-        appendChild(div, new Image());
+        appendChild(div, new ImageComponent());
 
         let paragraph = document.createElement("p");
         paragraph.textContent = text;

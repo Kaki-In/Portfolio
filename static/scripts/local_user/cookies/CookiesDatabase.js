@@ -19,7 +19,7 @@ export class CookiesDatabase {
 				let result = JSON.parse(decodeURIComponent(cookie.split("=")[1]));
 				return result;
 			}
-		} catch {
+		} catch (e) {
 		}
 	}
 

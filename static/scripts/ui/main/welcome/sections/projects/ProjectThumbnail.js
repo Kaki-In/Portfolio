@@ -1,16 +1,16 @@
 import { appendChild, Component } from "../../../../components/Component.js";
-import { Image } from "../../../../components/Image.js";
+import { ImageComponent } from "../../../../components/Image.js";
 
 export class ProjectThumbnail extends Component
 {
     constructor(project, local_user, notifications, switch_history)
     {
-        let { div, title: title_element, text, date_text, image, link_text } = createProjectThumbnail();
+        let { div, title: title_element, text, date_text, image, link_text, finished_span } = createProjectThumbnail();
         super(div);
 
         image.base64 = project.thumbnail;
 
-        local_user.translator.multiTranslate((title, intro, date_from, date_to, date_at, date_to_today) => {
+        local_user.translator.multiTranslate((title, intro, date_from, date_to, date_at, date_to_today, project_finished) => {
             let language = local_user.preferences.language;
 
             title_element.innerHTML = title;
@@ -25,7 +25,9 @@ export class ProjectThumbnail extends Component
                 date_text.innerHTML = date_from + " " + project.date_from.toLocaleDateString(language) + " " + date_to + " " + project.date_to.toLocaleDateString(language);
             }
 
-        }, "project." + project.name + ".title", "project." + project.name + ".intro", "date.from", "date.to", "date.at", "date.to-today");
+            finished_span.innerHTML = project_finished;
+
+        }, "project." + project.name + ".title", "project." + project.name + ".intro", "date.from", "date.to", "date.at", "date.to-today", "banners.projects.finished");
 
         div.addEventListener("click", () => {
             switch_history.pushState("project", {project: project.name});
@@ -35,6 +37,11 @@ export class ProjectThumbnail extends Component
         {
             link_text.href = project.link;
             link_text.textContent = project.link;
+        }
+
+        if (project.finished)
+        {
+            div.classList.add("finished");
         }
 
     }
@@ -60,7 +67,7 @@ function createProjectThumbnail()
     let div = document.createElement("div");
     div.classList.add("project-thumbnail");
 
-    let image = appendChild(div, new Image());
+    let image = appendChild(div, new ImageComponent());
 
     let description_div = div.appendChild(document.createElement("div"));
     description_div.classList.add("project-description");
@@ -77,6 +84,9 @@ function createProjectThumbnail()
     
     let link_text = description_p.querySelector('#link');
     link_text.classList.add("project-links");
+
+    let finished_span = div.appendChild(document.createElement("span"));
+    finished_span.classList.add("finished-banner")
     
     return {
         div,
@@ -84,7 +94,8 @@ function createProjectThumbnail()
         title,
         text,
         date_text,
-        link_text
+        link_text,
+        finished_span
     };
 }
 

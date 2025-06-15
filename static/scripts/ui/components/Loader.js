@@ -4,13 +4,13 @@ export class Loader extends Component {
 
     constructor() {
 
-        super(createDiv());
+        super(createLoader());
 
     }
 
 }
 
-function createDiv() {
+function createLoader() {
     let div = document.createElement("span");
     div.className = "loader";
     return div;

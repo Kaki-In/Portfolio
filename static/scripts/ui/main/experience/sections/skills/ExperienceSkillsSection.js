@@ -5,7 +5,7 @@ export class ExperienceSkillsSection extends Component
 {
     constructor(name, skills, local_user, notifications, switch_history)
     {
-        let { div, title, content_div } = createSoftSkillsSection();
+        let { div, title, content_div } = createExperienceSkillsSection();
         super(div);
 
         this._title = title;
@@ -33,7 +33,7 @@ export class ExperienceSkillsSection extends Component
 
 }
 
-function createSoftSkillsSection()
+function createExperienceSkillsSection()
 {
     let div = document.createElement("div");
     div.classList.add("skills-section");

@@ -20,7 +20,7 @@ export class LocalUser
         this._world = new World(this._api, this._pages_retriever);
 
         this._events = {
-            update: new EventHandler()
+            "update": new EventHandler()
         }
     }
 

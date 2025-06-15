@@ -1,5 +1,5 @@
 import { appendChild, Component } from "../../../../components/Component.js";
-import { Image } from "../../../../components/Image.js";
+import { ImageComponent } from "../../../../components/Image.js";
 
 export class SkillProjectThumbnail extends Component
 {
@@ -60,7 +60,7 @@ function createSkillProjectThumbnail()
     let div = document.createElement("div");
     div.classList.add("project-thumbnail");
 
-    let image = appendChild(div, new Image());
+    let image = appendChild(div, new ImageComponent());
 
     let description_div = div.appendChild(document.createElement("div"));
     description_div.classList.add("project-description");

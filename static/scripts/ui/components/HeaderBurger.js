@@ -4,13 +4,13 @@ export class HeaderBurger extends Component {
 
     constructor() {
 
-        super(createDiv());
+        super(createHeaderBurger());
 
     }
 
 }
 
-function createDiv() {
+function createHeaderBurger() {
     let div = document.createElement("div");
     div.className = "menu-burger";
 
